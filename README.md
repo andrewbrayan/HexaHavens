@@ -1,5 +1,7 @@
 # HexaHavens
 
+¡Construye tu Reino en un Mundo Hex-traordinario!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 ## Development server
