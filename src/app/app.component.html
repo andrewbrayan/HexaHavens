@@ -1,8 +1,9 @@
-<div class="main-container">
+<div #container class="main-container">
   <div class="grid">
-    <div class="row" *ngFor="let row of grid">
-      <span class="hex" *ngFor="let hex of row">
-        <img src="assets/tiles/terrain/grass/grass_05.png" alt="hex">
+    <div class="row" *ngFor="let row of grid; let rowInd = index">
+      <span class="hex" [ngClass]="{'hex--withOut-land': !hex}" *ngFor="let hex of row; let colInd = index">
+        <img *ngIf="hex" [src]="hex.imagen" [alt]="hex.terrain+'_'+hex.type">
+        <img *ngIf="hex === null" src="assets/tiles/terrain/stone/stone_.png" alt="null" (click)="board.setTile([rowInd, colInd])">
       </span>
     </div>
   </div>
